@@ -1,4 +1,4 @@
-# Express Example
+# Products
 
 This repository demonstrates the usage of Sequelize within an [Express](https://expressjs.com) application.
 The implemented logic is a simple task tracking tool.
@@ -207,7 +207,7 @@ EXAMPLE RESPONSE - {
    id:"3423434234dwed"
 }
 
-To create Produt
+To create Product
 
 API URL - http://localhost:3000/products/create
 
