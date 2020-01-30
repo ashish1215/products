@@ -156,3 +156,66 @@ function onListening() { /* ... */ }
 
 And finally you have to adjust the `config/config.js` to fit your environment.
 Once thats done, your database configuration is ready!
+
+
+
+## Request responses
+
+Categories
+
+To get all categories with corresponding products
+
+API URL - http://localhost:3000/categories/getCategories
+
+Request - not needed
+
+Example Response - 
+
+ [ {
+        "name": "Electronics",
+        "id": "687d9e70-4327-11ea-9905-b126f109f72d",
+        "createdAt": "2020-01-30T06:11:52.000Z",
+        "updatedAt": "2020-01-30T06:11:52.000Z",
+        "Products": [
+            {
+                "name": "Samsung EX v2",
+                "id": "b6fad9a0-4327-11ea-88c4-bd28b390c20a",
+                "createdAt": "2020-01-30T06:14:04.000Z",
+                "updatedAt": "2020-01-30T06:14:04.000Z",
+                "CategoryId": "687d9e70-4327-11ea-9905-b126f109f72d"
+            },
+            {
+                "name": "IPhone Latest",
+                "id": "bc62f990-4327-11ea-88c4-bd28b390c20a",
+                "createdAt": "2020-01-30T06:14:13.000Z",
+                "updatedAt": "2020-01-30T06:14:13.000Z",
+                "CategoryId": "687d9e70-4327-11ea-9905-b126f109f72d"
+            }
+        ]
+    } ]
+
+
+To create Category
+
+API URL - http://localhost:3000/categories/create
+
+EXAMPLE REQUEST -   {  "name": "Electronics" }
+
+
+EXAMPLE RESPONSE - {  
+  "name": "Electronics", createdAt:"something", updatedAt:"somthing",
+   id:"3423434234dwed"
+}
+
+To create Produt
+
+API URL - http://localhost:3000/products/create
+
+EXAMPLE REQUEST -   {  "name": "IPHONE", CategoryId: "3423434234dwed" }
+
+
+EXAMPLE RESPONSE - {  
+  "name": "IPHONE", createdAt:"something", updatedAt:"somthing",
+   id:"34234342sdfsdf",
+   "CategoryId": "3423434234dwed"
+}
