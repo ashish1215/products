@@ -1,16 +1,15 @@
-var models  = require('../models');
+var models  = require('../../models');
 var express = require('express');
 var router  = express.Router();
+var functions = require('./functions')
 
 
 // api-URL /categories/create
 // POST-Request
 // Returns success if category is created
 router.post('/create', function(req, res) {
-  return models.Category.create(req.body).then(function(response) {
+  return functions.createCategory(req).then((response) => {
     return res.json(response)
-  }).catch((error) => {
-    return res.json(error)
   })
 });
 
@@ -19,8 +18,10 @@ router.post('/create', function(req, res) {
 // Returns all categories along with associated products
 
 router.post('/getCategories', async function(req,res) {
-  let result = await models.Category.findAll({include:[{ model: models.Product}] });
-  return res.json(result);
+
+ return functions.getCategories(req).then((response) => {
+   return res.json(response)
+ })
 
 });
 
