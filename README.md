@@ -1,9 +1,19 @@
 # Products
 
-This repository demonstrates the usage of Sequelize within an [Express](https://expressjs.com) application.
-The implemented logic is a simple task tracking tool.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+## Database setup 
+
+Change the database credentials and database schema name in config/config.js
+
+development: {
+    dialect: 'mysql',
+    host: 'your host id',
+    username: 'database username',
+    password: 'database password',
+    database: 'database name'
+},
+
 
 ## Starting App
 
@@ -79,7 +89,7 @@ module.exports = {
 
 You will now have a basic express application with some additional directories
 (config, models, migrations). Also you will find two migrations and models.
-One for the `User` and one for the `Task`.
+One for the `Category` and one for the `Product`.
 
 In order to associate the models with each other, you need to change the models
 like this:
